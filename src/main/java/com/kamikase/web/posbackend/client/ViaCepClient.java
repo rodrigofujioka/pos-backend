@@ -2,6 +2,7 @@ package com.kamikase.web.posbackend.client;
 
 
 
+import com.kamikase.web.posbackend.model.dto.CepResponseDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface ViaCepClient {
 
     @GetMapping("{cep}/json")
-    String consultaCep(@PathVariable("cep") String cep);
+    CepResponseDTO consultaCep(@PathVariable("cep") String cep);
 
 }

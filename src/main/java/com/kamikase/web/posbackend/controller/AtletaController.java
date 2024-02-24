@@ -2,8 +2,8 @@ package com.kamikase.web.posbackend.controller;
 
 import com.kamikase.web.posbackend.client.ViaCepClient;
 import com.kamikase.web.posbackend.model.Atleta;
+import com.kamikase.web.posbackend.model.dto.CepResponseDTO;
 import com.kamikase.web.posbackend.service.AtletaService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -55,7 +55,7 @@ public class AtletaController {
 
 
     @GetMapping("/cep/{cep}")
-    public ResponseEntity<String> consultarCepAtleta(@PathVariable String cep){
+    public ResponseEntity<CepResponseDTO> consultarCepAtleta(@PathVariable String cep){
 
         var cepResponse = viaCepClient.consultaCep(cep);
 

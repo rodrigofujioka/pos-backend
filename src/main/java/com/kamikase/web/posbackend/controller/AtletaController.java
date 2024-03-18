@@ -39,8 +39,9 @@ public class AtletaController {
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deletar(@PathVariable Integer id){
         service.deletar(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
+
 
     @GetMapping("{id}")
     public ResponseEntity<Atleta> consultarPorId(@PathVariable Integer id){
@@ -49,7 +50,7 @@ public class AtletaController {
 
     @GetMapping
     public ResponseEntity<List<Atleta>> listarTodos(){
-        return ResponseEntity.ok(atletaClient.listarAtleta());
+        return ResponseEntity.ok(service.listar());
     }
 
     @GetMapping("/nome/{nome}")
